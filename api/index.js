@@ -8,7 +8,10 @@ let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID, SECRET_KEY } = proces
 PGPASSWORD = decodeURIComponent(PGPASSWORD);
 
 let app = express();
-app.use(cors());
+app.use(cors({
+    origin: '<a href="https://3-a-1-backend-beginner-5nktqb5aw-jumper9222s-projects.vercel.app">https://3-a-1-backend-beginner-5nktqb5aw-jumper9222s-projects.vercel.app&#39</a>;',
+    credentials: true
+}));
 app.use(express.json());
 
 const pool = new Pool({
